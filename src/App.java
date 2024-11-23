@@ -25,7 +25,7 @@ public class App {
             }
             case 3:{
               //capturar codigo, nome fone e e-mail
-              //atualizar nome, fone e e-mail do usuario cujo codigo foi especificado
+              //atualizar nome, fone e e-mail pessoa cujo codigo foi especificado
             }
             case 4: {
               var codigo = Integer.parseInt(

@@ -26,6 +26,21 @@ public class App {
             case 3:{
               //capturar codigo, nome fone e e-mail
               //atualizar nome, fone e e-mail pessoa cujo codigo foi especificado
+              int codigo = Integer.parseInt(JOptionPane.showInputDialog("Código da pessoa?"));
+              String nome = JOptionPane.showInputDialog("Novo nome?");
+              String fone = JOptionPane.showInputDialog("Novo fone?");
+              String email = JOptionPane.showInputDialog("Novo email?");
+              
+              Pessoa p = new Pessoa();
+              p.setNome(nome);
+              p.setFone(fone);
+              p.setEmail(email);
+              p.setCodigo(codigo);
+              
+              PessoaDAO dao = new PessoaDAO();
+              dao.atualizar(p);
+              JOptionPane.showMessageDialog(null, "Pessoa atualizada com sucesso!");
+              break;
             }
             case 4: {
               var codigo = Integer.parseInt(

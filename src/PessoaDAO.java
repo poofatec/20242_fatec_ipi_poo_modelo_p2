@@ -22,6 +22,18 @@ public class PessoaDAO {
     ps.close();
   }
 
+  public void atualizar(Pessoa p) throws Exception {
+    String sql = "UPDATE tb_pessoa SET nome = ?, fone = ?, email = ? WHERE cod_pessoa = ?";
+    var conexao = ConnectionFactory.conectar();
+    var ps = conexao.prepareStatement(sql);
+    ps.setString(1, p.getNome());
+    ps.setString(2, p.getFone());
+    ps.setString(3, p.getEmail());
+    ps.setInt(4, p.getCodigo());
+    ps.execute();
+    ps.close();  
+  }
+
   public void apagar(Pessoa p) throws Exception{
     var sql = "DELETE FROM tb_pessoa WHERE cod_pessoa = ?";
     var conexao = ConnectionFactory.conectar();
